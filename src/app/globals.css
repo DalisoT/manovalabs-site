@@ -23,11 +23,11 @@
   --text-tertiary: #7a7e88;
   --text-muted: #54585f;
 
-  /* Accent — restrained gold */
-  --accent: #e8c547;
-  --accent-soft: #f4d678;
-  --accent-dim: #6b5a22;
-  --accent-glow: rgba(232, 197, 71, 0.15);
+  /* Accent — teal-green (matches MANOVA LABS logo) */
+  --accent: #2dd4a4;
+  --accent-soft: #5ee5b8;
+  --accent-dim: #1b9c7a;
+  --accent-glow: rgba(45, 212, 164, 0.15);
 
   /* States */
   --success: #34d399;
