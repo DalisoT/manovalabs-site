@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
@@ -42,7 +43,16 @@ export function Navbar() {
               className="flex items-center gap-2.5 group"
               aria-label={`${siteConfig.name} home`}
             >
-              <Mark />
+              <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt={`${siteConfig.name} logo`}
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
+                  priority
+                />
+              </span>
               <span className="hidden sm:inline-flex flex-col leading-none">
                 <span className="text-label uppercase text-text-tertiary tracking-[0.18em]">
                   Manova
@@ -106,32 +116,5 @@ export function Navbar() {
 
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
-  );
-}
-
-function Mark() {
-  return (
-    <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-bg-elevated border border-border-subtle overflow-hidden">
-      <svg
-        viewBox="0 0 32 32"
-        className="h-5 w-5 text-accent"
-        aria-hidden
-      >
-        <defs>
-          <linearGradient id="manova-mark" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="var(--accent-soft)" />
-            <stop offset="1" stopColor="var(--accent)" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M6 4 L26 4 L26 28 L6 28 Z M6 16 L26 16"
-          fill="none"
-          stroke="url(#manova-mark)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <circle cx="22" cy="22" r="1.6" fill="url(#manova-mark)" />
-      </svg>
-    </span>
   );
 }

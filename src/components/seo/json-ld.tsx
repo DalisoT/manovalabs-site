@@ -22,7 +22,7 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/favicon.svg`,
+    logo: `${siteConfig.url}/logo.png`,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
     areaServed: { "@type": "Country", name: "Zambia" },

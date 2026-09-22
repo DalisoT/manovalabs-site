@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { currentYear } from "@/lib/utils/format";
 import { siteConfig, whatsappLink } from "@/lib/config/site";
@@ -17,17 +18,14 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-bg-elevated border border-border-subtle">
-                <svg viewBox="0 0 32 32" className="h-5 w-5" aria-hidden>
-                  <path
-                    d="M6 4 L26 4 L26 28 L6 28 Z M6 16 L26 16"
-                    fill="none"
-                    stroke="var(--accent)"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="22" cy="22" r="1.6" fill="var(--accent)" />
-                </svg>
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-md overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt={`${siteConfig.name} logo`}
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 object-contain"
+                />
               </span>
               <div className="flex flex-col leading-none">
                 <span className="text-label uppercase text-text-tertiary tracking-[0.18em]">
