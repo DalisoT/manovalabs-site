@@ -30,6 +30,26 @@ const nextConfig = {
     ];
   },
 
+  // Tell webpack's file watcher to ignore Windows system files that
+  // Next.js otherwise tries to scan on initial load (causes EINVAL on
+  // C:\DumpStack.log.tmp, C:\pagefile.sys, C:\swapfile.sys).
+  webpack(config, { dev }) {
+    if (dev) {
+      config.watchOptions = {
+        ...config.watchOptions,
+        ignored: [
+          "**/node_modules/**",
+          "**/.git/**",
+          "**/.next/**",
+          "**/DumpStack.log.tmp",
+          "**/pagefile.sys",
+          "**/swapfile.sys",
+        ],
+      };
+    }
+    return config;
+  },
+
   experimental: {
     // Improves cold-start performance on serverless deploys.
     optimizePackageImports: ["lucide-react"],
