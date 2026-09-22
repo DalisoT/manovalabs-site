@@ -1,0 +1,24 @@
+{
+  "name": "MANOVA LABS — Build. Automate. Evolve.",
+  "short_name": "MANOVA",
+  "description": "Zambia-based technology company building modern websites, web applications, AI-powered solutions and automated digital systems.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#0A0B0F",
+  "background_color": "#0A0B0F",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/"
+}
