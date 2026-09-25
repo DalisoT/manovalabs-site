@@ -1,0 +1,17 @@
+// wrangler.jsonc — Cloudflare Workers config for the MANOVA LABS site.
+// Built with @opennextjs/cloudflare.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "manovalabs-site",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "placement": { "mode": "smart" }
+}
