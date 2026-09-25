@@ -150,15 +150,53 @@ If no provider is configured, `/api/ai/chat` returns 503 and the assistant UI sh
 
 ---
 
-## Deploying to Vercel
+## Deploying to Cloudflare Pages
 
-1. Push the repo to GitHub (see "Pushing to GitHub" below).
-2. Import the repo at [vercel.com/new](https://vercel.com/new).
-3. In **Settings → Environment Variables**, add every variable from `.env.example` that you want active.
-4. Vercel auto-detects Next.js. No build command changes needed.
-5. Deploy.
+This project is configured to deploy via **Cloudflare Pages using `@opennextjs/cloudflare`** (Workers runtime).
 
-The site works as a static export for everything except `/api/*` and `/work/[slug]` (those remain dynamic when Supabase is configured).
+### Build & deploy commands
+
+| Command | What it does |
+|---|---|
+| `npm run cf:build` | Build the OpenNext worker bundle into `.open-next/` |
+| `npm run cf:deploy` | Deploy the bundle via `wrangler` |
+| `npm run cf:preview` | Local preview of the worker bundle |
+| `npm run clean:dev` | Wipe `.next/`, `node_modules/.cache/`, and `.open-next/` |
+
+### Cloudflare Pages dashboard setup
+
+1. **Connect repo:** Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → connect to `DalisoT/manovalabs-site`.
+
+2. **Build settings:**
+ - **Build command:** `npm run cf:build`
+ - **Build output directory:** `.open-next`
+ - **Root directory:** *(leave blank)*
+ - **Environment variables:** *(see below)*
+ - **Compatibility flags:** `nodejs_compat` *(already set in wrangler.jsonc, but Cloudflare Pages sometimes overrides)*
+
+3. **Environment variables** to set in the dashboard (Settings → Environment variables):
+
+| Variable | Required | Notes |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | yes | Set to your production domain before the first build (used at build time for metadata + OG tags) |
+| `NEXT_PUBLIC_SUPABASE_URL` | optional | If you wire Supabase; site works without it |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | optional | |
+| `SUPABASE_SERVICE_ROLE_KEY` | optional | **Server-only** — used by `/api/leads` |
+| `OPENAI_API_KEY` | optional | If you wire MANOVA AI |
+| `OPENAI_BASE_URL` | optional | Defaults to `https://api.minimax.chat/v1` (MiniMax) |
+| `OPENAI_MODEL` | optional | Default `gpt-4o-mini` |
+| `AI_PROVIDER` | optional | Default `openai` |
+| `AI_RATE_LIMIT_PER_HOUR` | optional | Default `30` |
+
+4. **First deploy:** push to `main`. Cloudflare builds with `npm run cf:build` and publishes the worker. URL will be `manovalabs-site.<account>.workers.dev` (or your custom domain once attached).
+
+### Why `--dangerouslyUseUnsupportedNextVersion`?
+
+OpenNext 1.20.6's whitelist only accepts Next.js majors released within the last ~2 years. We're on Next.js 14.2.15 (which has a known security advisory — see "Known issues" below). The flag bypasses the whitelist check; the build still works.
+
+### Local smoke test
+
+Skip it on Windows. OpenNext prints "WARN not fully compatible with Windows — use WSL" and the build step hangs. Push to Cloudflare — their Linux Node 24 environment handles it cleanly.
 
 ---
 
