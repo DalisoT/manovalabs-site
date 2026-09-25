@@ -9,8 +9,8 @@
     "lint": "next lint",
     "clean:dev": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true});require('fs').rmSync('node_modules/.cache',{recursive:true,force:true});require('fs').rmSync('.open-next',{recursive:true,force:true})\"",
     "cf:build": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
-    "cf:deploy": "opennextjs-cloudflare deploy --dangerouslyUseUnsupportedNextVersion",
-    "deploy": "opennextjs-cloudflare deploy --dangerouslyUseUnsupportedNextVersion",
+    "cf:deploy": "opennextjs-cloudflare deploy",
+    "deploy": "opennextjs-cloudflare deploy",
     "cf:preview": "opennextjs-cloudflare preview --dangerouslyUseUnsupportedNextVersion"
   },
   "dependencies": {
