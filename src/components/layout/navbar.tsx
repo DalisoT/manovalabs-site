@@ -45,7 +45,7 @@ export function Navbar() {
             >
               <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src="/logo-mark.svg"
                   alt={`${siteConfig.name} logo`}
                   width={36}
                   height={36}
@@ -55,10 +55,10 @@ export function Navbar() {
               </span>
               <span className="hidden sm:inline-flex flex-col leading-none">
                 <span className="text-label uppercase text-text-tertiary tracking-[0.18em]">
-                  Manova
+                  The
                 </span>
                 <span className="text-body font-semibold text-text-primary">
-                  LABS
+                  R. Standard
                 </span>
               </span>
             </Link>

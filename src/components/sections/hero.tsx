@@ -13,33 +13,35 @@ export function Hero() {
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-bg-surface/60 backdrop-blur-sm px-3 py-1.5 text-label uppercase tracking-[0.16em] text-text-secondary">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-soft" />
-            Web · AI · Automation · Digital Systems
+            Consulting · Training · AI · Web
           </div>
 
           <h1 className="mt-8 text-display-1 text-text-primary text-balance">
-            <span className="block">Build.</span>
-            <span className="block">Automate.</span>
-            <span className="block gradient-text">Evolve.</span>
+            <span className="block">Hi, I&apos;m</span>
+            <span className="block gradient-text">Richard Tembo.</span>
+            <span className="block text-text-secondary text-display-2 font-medium mt-2">
+              I help Zambian businesses use technology and AI — practically.
+            </span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-body-lg text-text-secondary text-pretty">
-            We build modern websites, web applications, AI-powered solutions
-            and automated digital systems that help businesses work smarter.
+            Consulting, training and selected build work for small businesses,
+            schools, NGOs and founders who want real outcomes — not slide decks.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Button asChild href="/start-project" size="lg">
-              Start a Project
+              Start a conversation
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Button>
-            <Button asChild size="lg" variant="outline" href="/work">
-              Explore Our Work
+            <Button asChild size="lg" variant="outline" href="/services">
+              See what I do
             </Button>
           </div>
 
           <div className="mt-12 flex items-center gap-2 text-body-sm text-text-tertiary">
             <MapPin className="h-4 w-4 text-accent" aria-hidden />
-            Serving businesses across {siteConfig.location}.
+            Based in {siteConfig.location}. Working locally.
           </div>
         </div>
 

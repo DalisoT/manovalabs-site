@@ -23,33 +23,33 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: `${siteConfig.founderName} — ${siteConfig.tagline}`,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  authors: [{ name: "MANOVA LABS" }],
+  authors: [{ name: siteConfig.founderName }],
   generator: "Next.js",
   keywords: [
+    "Richard Tembo Zambia",
+    "consulting Zambia",
+    "AI training Zambia",
+    "mentoring Zambia",
     "web development Zambia",
-    "web applications Zambia",
-    "AI automation Zambia",
-    "business automation Zambia",
-    "software development Zambia",
-    "AI solutions Zambia",
-    "digital solutions Zambia",
+    "small business consulting Zambia",
+    "AI for SMEs Zambia",
   ],
   openGraph: {
     type: "website",
     locale: "en_ZM",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.founderName} — ${siteConfig.tagline}`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.founderName} — ${siteConfig.tagline}`,
     description: siteConfig.description,
   },
   robots: {
@@ -60,6 +60,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo-mark.svg", type: "image/svg+xml" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
     ],

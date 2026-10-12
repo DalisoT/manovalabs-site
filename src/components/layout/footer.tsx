@@ -17,25 +17,25 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2.5">
+            <Link href="/" className="inline-flex items-center gap-3 group">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-md overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src="/logo-mark.svg"
                   alt={`${siteConfig.name} logo`}
                   width={40}
                   height={40}
                   className="h-10 w-10 object-contain"
                 />
               </span>
-              <div className="flex flex-col leading-none">
+              <div className="flex flex-col leading-tight">
                 <span className="text-label uppercase text-text-tertiary tracking-[0.18em]">
-                  Manova
+                  The
                 </span>
                 <span className="text-body font-semibold text-text-primary">
-                  LABS
+                  Richard Standard
                 </span>
               </div>
-            </div>
+            </Link>
             <p className="mt-5 text-body text-text-secondary max-w-sm text-pretty">
               {siteConfig.tagline}. Building modern websites, applications and
               AI-powered digital systems for businesses across {siteConfig.location}.
@@ -134,7 +134,7 @@ export function Footer() {
 
         <div className="mt-14 pt-6 border-t border-border-subtle flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-body-sm text-text-tertiary">
           <p>
-            © {currentYear()} {siteConfig.name}. All rights reserved.
+            © {currentYear()} {siteConfig.founderName} · {siteConfig.name}. All rights reserved.
           </p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             <li>

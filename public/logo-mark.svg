@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="The Richard Standard monogram">
+  <defs>
+    <linearGradient id="trs-mark" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1B9C7A"/>
+      <stop offset="1" stop-color="#5EE5B8"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="url(#trs-mark)"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="700" fill="#0A0B0F">R</text>
+</svg>

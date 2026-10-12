@@ -10,14 +10,15 @@ interface Props {
 }
 
 const OPTIONS: { value: string; label: string; desc: string }[] = [
-  { value: "website", label: "Website", desc: "Marketing, corporate or content site." },
+  { value: "consulting", label: "Consulting / Strategy", desc: "Help figuring out what to build, buy or skip." },
+  { value: "training", label: "Training / Mentoring", desc: "1-on-1, workshops, mentoring for your team." },
+  { value: "ai", label: "AI Work", desc: "Custom AI features, integrations, AI workflows." },
+  { value: "automation", label: "Business Automation", desc: "Workflows, notifications, reporting, approvals." },
+  { value: "web-development", label: "Web Development", desc: "A website or web app, taken on when it fits." },
   { value: "web-app", label: "Web Application", desc: "Dashboards, portals, internal tools." },
   { value: "ecommerce", label: "E-commerce", desc: "Store, checkout, order management." },
-  { value: "ai", label: "AI Solution", desc: "Chatbots, knowledge bases, AI workflows." },
-  { value: "automation", label: "Business Automation", desc: "Workflows, notifications, approvals." },
-  { value: "database", label: "Database / System", desc: "Custom internal or operational system." },
-  { value: "mobile", label: "Mobile App", desc: "Native or hybrid mobile experience." },
-  { value: "integration", label: "API Integration", desc: "Connect two systems together." },
+  { value: "system", label: "Custom System", desc: "Internal business system, database, dashboard." },
+  { value: "speaking", label: "Speaking / Writing", desc: "Talks, workshops, articles, content." },
   { value: "other", label: "Other", desc: "Something not on the list." },
 ];
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServicePage } from "@/components/layout/service-page";
 import { getServiceBySlug } from "@/lib/config/services";
 
-const service = getServiceBySlug("web-applications")!;
+const service = getServiceBySlug("training")!;
 
 export const metadata: Metadata = {
   title: service.title,

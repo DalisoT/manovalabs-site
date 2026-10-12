@@ -30,7 +30,7 @@ const WELCOME: Message = {
   id: "welcome",
   role: "assistant",
   content:
-    "Hi, I'm MANOVA AI. I can tell you what we build, help you understand our services, or help you start a project.",
+    "Hi, I'm Ask Richard — I can tell you what Richard does, help you figure out whether consulting, training, AI work or a build project fits, or help you start a conversation.",
 };
 
 export function ManovaAI({ open, onOpenChange }: ManovaAIProps) {
@@ -97,7 +97,7 @@ export function ManovaAI({ open, onOpenChange }: ManovaAIProps) {
 
       if (!res.ok) {
         setError(
-          "MANOVA AI is temporarily unavailable. You can still tell us about your project using the Start a Project form."
+          "Ask Richard is temporarily unavailable. You can still tell us about your project using the Start a Project form."
         );
         return;
       }
@@ -117,7 +117,7 @@ export function ManovaAI({ open, onOpenChange }: ManovaAIProps) {
       ]);
     } catch {
       setError(
-        "MANOVA AI is temporarily unavailable. You can still tell us about your project using the Start a Project form."
+        "Ask Richard is temporarily unavailable. You can still tell us about your project using the Start a Project form."
       );
     } finally {
       setBusy(false);
@@ -130,7 +130,7 @@ export function ManovaAI({ open, onOpenChange }: ManovaAIProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="MANOVA AI assistant"
+      aria-label="Ask Richard assistant"
       className="fixed bottom-4 right-4 z-[80] w-[min(380px,calc(100vw-2rem))] h-[min(620px,calc(100vh-6rem))] max-h-[80vh] glass rounded-lg shadow-2xl flex flex-col animate-fade-up"
     >
       <header className="flex items-center justify-between p-4 border-b border-border-subtle">
@@ -140,7 +140,7 @@ export function ManovaAI({ open, onOpenChange }: ManovaAIProps) {
           </span>
           <div>
             <p className="text-body-sm font-semibold text-text-primary leading-tight">
-              MANOVA AI
+              Ask Richard
             </p>
             <p className="text-label uppercase tracking-wider text-text-tertiary">
               Assistant
@@ -210,9 +210,9 @@ export function ManovaAI({ open, onOpenChange }: ManovaAIProps) {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask MANOVA AI…"
+          placeholder="Ask Ask Richard…"
           maxLength={500}
-          aria-label="Message MANOVA AI"
+          aria-label="Message Ask Richard"
           disabled={busy}
           className="flex-1 h-10 rounded-md bg-bg-elevated border border-border-subtle px-3 text-body-sm text-text-primary placeholder:text-text-muted focus:border-accent focus:outline-none disabled:opacity-50"
         />

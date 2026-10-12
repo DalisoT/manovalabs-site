@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { allServices, services } from "@/lib/config/services";
 import { allProjects } from "@/lib/config/projects";
+import { allBooks } from "@/lib/config/books";
 import { siteConfig } from "@/lib/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/services",
     "/work",
+    "/books",
     "/about",
     "/process",
     "/contact",
@@ -38,9 +40,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const bookPaths: MetadataRoute.Sitemap = allBooks.map((b) => ({
+    url: `${base}/books/${b.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.5,
+  }));
+
   // Reference allServices so the linter doesn't complain (also defensive:
   // if maintenance ever gets a dedicated page, it auto-appears).
   void allServices;
 
-  return [...staticPaths, ...servicePaths, ...projectPaths];
+  return [...staticPaths, ...servicePaths, ...projectPaths, ...bookPaths];
 }

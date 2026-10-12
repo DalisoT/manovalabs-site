@@ -19,20 +19,29 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
 export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: siteConfig.name,
+    "@type": "Person",
+    name: siteConfig.founderName,
+    jobTitle: siteConfig.founderRole,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    image: `${siteConfig.url}/logo-mark.svg`,
     description: siteConfig.description,
     slogan: siteConfig.tagline,
-    areaServed: { "@type": "Country", name: "Zambia" },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        email: siteConfig.email,
-        availableLanguage: ["English"],
-      },
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: siteConfig.location,
+    },
+    email: siteConfig.email,
+    knowsAbout: [
+      "Technology consulting",
+      "Artificial intelligence",
+      "Business automation",
+      "Web development",
+      "Mentoring",
     ],
     sameAs: [
       siteConfig.social.github,
@@ -50,12 +59,13 @@ export function WebSiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
+    alternateName: siteConfig.founderName,
     url: siteConfig.url,
     description: siteConfig.description,
     inLanguage: "en-ZM",
     publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
+      "@type": "Person",
+      name: siteConfig.founderName,
     },
   };
   return <JsonLd data={data} />;

@@ -24,9 +24,9 @@ export function AIDemo() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <SectionHeading
-                eyebrow="Ask MANOVA AI"
-                title="A small taste of what we build."
-                description="MANOVA AI is the same kind of capability we can embed into your website — answering questions about your services, routing visitors to the right next step, and turning conversations into qualified briefs."
+                eyebrow="Ask Richard"
+                title="A small taste of the kind of work I do."
+                description="This assistant is a live example of the AI capability I can build for your business — answering questions about what I do, routing visitors to the right offering, and turning conversations into qualified briefs."
               />
 
               <ul className="mt-10 space-y-4 text-body text-text-secondary">
@@ -52,7 +52,7 @@ export function AIDemo() {
                   }}
                 >
                   <Sparkles className="h-4 w-4" aria-hidden />
-                  Open MANOVA AI
+                  Open Ask Richard
                 </Button>
                 <Button asChild variant="outline" href="/services/ai-integration">
                   How AI integration works
@@ -86,8 +86,8 @@ function ChatPreview({ onTryIt }: { onTryIt: () => void }) {
       <div className="space-y-4">
         <div className="flex justify-start">
           <div className="max-w-[85%] rounded-lg rounded-tl-sm bg-bg-elevated border border-border-subtle px-4 py-3 text-body-sm text-text-primary">
-            Hi, I&apos;m MANOVA AI. I can tell you what we build, help you
-            understand our services, or help you start a project.
+            Hi, I&apos;m Ask Richard. I can tell you what Richard does, help
+            you figure out which offering fits, or help you start a conversation.
           </div>
         </div>
 
