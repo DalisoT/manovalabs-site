@@ -1,6 +1,6 @@
-# MANOVA LABS — Website
+# The Richard Standard — Personal site
 
-Production website for [MANOVA LABS](https://manovalabs.com) — a Zambia-based technology company building modern websites, web applications, AI-powered solutions and automated digital systems.
+Production site for [The Richard Standard](https://therichardstandard.com) — Richard Tembo's personal brand for consulting, training, AI work and selected builds across Zambia.
 
 **Tagline:** Build. Automate. Evolve.
 
@@ -165,7 +165,7 @@ This project is configured to deploy via **Cloudflare Pages using `@opennextjs/c
 
 ### Cloudflare Pages dashboard setup
 
-1. **Connect repo:** Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → connect to `DalisoT/manovalabs-site`.
+1. **Connect repo:** Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** → connect to `DalisoT/the-richard-standard`.
 
 2. **Build settings:**
  - **Build command:** `npm run cf:build`
@@ -188,7 +188,7 @@ This project is configured to deploy via **Cloudflare Pages using `@opennextjs/c
 | `AI_PROVIDER` | optional | Default `openai` |
 | `AI_RATE_LIMIT_PER_HOUR` | optional | Default `30` |
 
-4. **First deploy:** push to `main`. Cloudflare builds with `npm run cf:build` and publishes the worker. URL will be `manovalabs-site.<account>.workers.dev` (or your custom domain once attached).
+4. **First deploy:** push to `main`. Cloudflare builds with `npm run cf:build` and publishes the worker. URL will be `the-richard-standard.<account>.workers.dev` (or your custom domain once attached).
 
 ### Why `--dangerouslyUseUnsupportedNextVersion`?
 

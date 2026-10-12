@@ -2,7 +2,7 @@
 // Built with @opennextjs/cloudflare.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "manovalabs-site",
+  "name": "the-richard-standard",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-05-01",
   "compatibility_flags": ["nodejs_compat"],
